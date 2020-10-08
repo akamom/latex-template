@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage[ngerman]{babel} % Deutsche Sonderzeichen und Silbentrennung nutzen
+\usepackage[german]{nomencl} % Erstellen von Listen (Nomenklaturen)
+\usepackage{fontspec} % Zeichenencoding
+\usepackage{graphicx} % Grafiken aus PNG Dateien einbinden
+\usepackage[right]{eurosym} % Eurozeichen einbinden
+\usepackage{longtable} % mehrseitige Tabellen ermöglichen
+\usepackage{color} % Paket für Textfarben
+\usepackage{amssymb} % Mathematische Symbole importieren
+\usepackage{array} % für Tabellen
+\usepackage{blindtext} % Um Blindtext als Beispiel zu erstellen
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage{amsmath} % Für Formeln und Formelverzeichnis
+\usepackage[backend=biber, sorting=none, citestyle=ieee]{biblatex} % Für Zitate
+\usepackage{csquotes} % Für babel
+\usepackage{url} % bricht lange URLs "schön" um
+\usepackage[hidelinks]{hyperref} % Für Links intern und extern
+\usepackage{multirow} % Tabelle mit zusammengefügten Zeilen
+\usepackage{wrapfig} % Textumflossene Grafik
+\usepackage{caption} % Passe deine Bild- Tabellen-, etc. -überschriften an. 
+\usepackage{subcaption} % Zum Einbinden von Subfigs und Subcaptions
+
+% Ohne Einrückung bei neuem Absatz
+\setlength{\parindent}{0pt}
+
+% Festlegung Art der Zitierung
+\addbibresource{Quellen.bib}
+
+% Setup Captions
+\captionsetup[wrapfigure]{format=plain}
+
+% Begin Dokument =============================================================
+\begin{document}
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+% Inhaltsverzeichnis
+\setcounter{tocdepth}{2} % Nur Section und Subsection im Inhaltsverzeichnis anzeigen
+\tableofcontents
+\clearpage
+
+% Abbildungsverzeichnis
+\addcontentsline{toc}{section}{Abbildungsverzeichnis} % Abbildungsverzeichnis im Inhaltsverzeichnis anzeigen
+\listoffigures
+\clearpage
+
+% Tabellenverzeichnis
+\addcontentsline{toc}{section}{Tabellenverzeichnis} % Tabellenverzeichnis im Inhaltsverzeichnis anzeigen
+\listoftables
+\clearpage
+
+% Begin Des Inhalts ==========================================================
+\pagenumbering{arabic}
+
+\input{Kapitel 1}
+\clearpage
+
+\input{Kapitel 2}
+\clearpage
+
+\input{Kapitel 3}
+\clearpage
+
+\input{Kapitel 4}
+\clearpage
+
+% Literaturverzeichnis =======================================================
+\addcontentsline{toc}{section}{Literaturverzeichnis} % Literaturverzeichnis im Inhaltsverzeichnis anzeigen
+\renewcommand\refname{Literaturverzeichnis}
+\printbibliography
+\clearpage
+
+\end{document}
+

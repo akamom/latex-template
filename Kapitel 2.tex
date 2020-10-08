@@ -1,0 +1,41 @@
+\section{Umgebungen}\label{sec:umgebungen}
+Hier sind einige Beispiele für Umgebungen aufgelistet.
+
+\subsection{Umgebung für Listen}
+\begin{itemize}
+    \item Eintrag A
+    \item Eintrag B
+    \item \dots
+\end{itemize}
+
+\subsection{Umgebung für Tabellen}
+Bei der Erstellung der Tabellen gibt es viele hilfreiche Tools im Internet
+(\href{https://www.tablesgenerator.com/}{Table Generator}).
+
+Dies Tabelle \ref{table:simple} wurde mit dem Table Generator erstellt.
+\begin{table}[h!]
+    \centering
+    \caption{So muss es in der Studienarbeit aussehen}
+    \label{table:simple}
+    \begin{tabular}[t]{|l|l|l|}
+        \rowcolor[HTML]{CBCEFB}
+        \hline 
+        A & B & C \\ \hline
+        1 & 2 & 3 \\
+        1 & 2 & 3 \\ \hline
+    \end{tabular}
+\end{table}
+
+Die Tabelle \ref{table:multirow} besitzt sogar verbundene Zellen.
+\begin{table}[h!]
+    \centering
+    \caption{Mit verbundenen Zellen}
+    \label{table:multirow}
+    \begin{tabular}[t]{|l|l|l|}
+    \hline
+                             & \multicolumn{2}{l|}{Eigenschaften} \\ \hline
+    \multirow{3}{*}{Objekte} & Tag              & Name            \\ \cline{2-3} 
+                             & Frage            & Datum           \\ \cline{2-3} 
+                             & Author           & Name            \\ \hline
+    \end{tabular}
+\end{table}
