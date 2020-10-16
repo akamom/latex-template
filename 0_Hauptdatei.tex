@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[a4paper,12pt]{article}
 
 \usepackage[ngerman]{babel} % Deutsche Sonderzeichen und Silbentrennung nutzen
 \usepackage[german]{nomencl} % Erstellen von Listen (Nomenklaturen)
@@ -20,6 +20,9 @@
 \usepackage{wrapfig} % Textumflossene Grafik
 \usepackage{caption} % Passe deine Bild- Tabellen-, etc. -überschriften an. 
 \usepackage{subcaption} % Zum Einbinden von Subfigs und Subcaptions
+\usepackage{setspace} % Paket für Zeilenabstand
+\usepackage{fancyhdr} % Für Kopf- und Fußzeilen
+\usepackage{geometry} % Packet für Seitenrandabständex und Einstellung für Seitenränder
 
 % Ohne Einrückung bei neuem Absatz
 \setlength{\parindent}{0pt}
@@ -30,8 +33,24 @@
 % Setup Captions
 \captionsetup[wrapfigure]{format=plain}
 
+% Geometrie des Dokuments
+\geometry{left=3.5cm, right=2cm, top=2.5cm, bottom=2cm}
+
+% Neue Kopfzeilen mit dem Paket fancyhdr
+\setlength{\headheight}{15pt} % Warnung headhight is too small. 
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{\nouppercase{\leftmark}} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\thepage} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+
 % Begin Dokument =============================================================
 \begin{document}
+
+% Deckblatt
+\input{0_Deckblatt}
+\clearpage
 
 \pagenumbering{Roman}
 \setcounter{page}{1}
@@ -53,17 +72,9 @@
 
 % Begin Des Inhalts ==========================================================
 \pagenumbering{arabic}
+\newgeometry{left=3.0cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
-\input{Kapitel 1}
-\clearpage
-
-\input{Kapitel 2}
-\clearpage
-
-\input{Kapitel 3}
-\clearpage
-
-\input{Kapitel 4}
+\input{0_Beispiel}
 \clearpage
 
 % Literaturverzeichnis =======================================================

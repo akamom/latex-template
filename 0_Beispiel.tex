@@ -1,0 +1,85 @@
+\section{Erste Ebene}\label{sec:ebene}
+\blindtext
+\subsection{Zweite Ebene}\label{sec:subebene}
+\blindtext[1]
+\subsubsection{Dritte Ebene}\label{sec:subsubebene}
+Ich referenziere hier auf Kapitel \ref{sec:ebene}.
+\blindtext[2]
+
+\clearpage
+
+\section{Umgebungen}\label{sec:umgebungen}
+Hier sind einige Beispiele für Umgebungen aufgelistet.
+
+\subsection{Umgebung für Listen}
+\begin{itemize}
+    \item Eintrag A
+    \item Eintrag B
+    \item \dots
+\end{itemize}
+
+\subsection{Umgebung für Tabellen}
+Bei der Erstellung der Tabellen gibt es viele hilfreiche Tools im Internet
+(\href{https://www.tablesgenerator.com/}{Table Generator}).
+
+Dies Tabelle \ref{table:simple} wurde mit dem Table Generator erstellt.
+\begin{table}[h!]
+    \centering
+    \caption{So muss es in der Studienarbeit aussehen}
+    \label{table:simple}
+    \begin{tabular}[t]{|l|l|l|}
+        \rowcolor[HTML]{CBCEFB}
+        \hline 
+        A & B & C \\ \hline
+        1 & 2 & 3 \\
+        1 & 2 & 3 \\ \hline
+    \end{tabular}
+\end{table}
+
+Die Tabelle \ref{table:multirow} besitzt sogar verbundene Zellen.
+\begin{table}[h!]
+    \centering
+    \caption{Mit verbundenen Zellen}
+    \label{table:multirow}
+    \begin{tabular}[t]{|l|l|l|}
+    \hline
+                             & \multicolumn{2}{l|}{Eigenschaften} \\ \hline
+    \multirow{3}{*}{Objekte} & Tag              & Name            \\ \cline{2-3} 
+                             & Frage            & Datum           \\ \cline{2-3} 
+                             & Author           & Name            \\ \hline
+    \end{tabular}
+\end{table}
+
+\clearpage
+
+\section{Einbinden von Quellen}\label{sec:quellen}
+So bindet man Quellen in \LaTeX ein \cite{AllQuestionsSAP}.
+Man kann auch eine Quelle mit Seitenzahl einbinden \cite[S. 420]{bianchiniPageRank2005}.
+Hier wurde der Zitierstiel IEEE genutzt und mit BibTeX gearbeitet.
+
+\clearpage
+
+\section{Abbildungen einbinden}\label{sec:abbildungen}
+In der Abbildung \ref{fig:nico} zeige ich das Internet in seiner vollendeten Form.
+\begin{wrapfigure}{l}{8cm}
+    \includegraphics[width=0.5\textwidth,angle=0]{abb/26z3fo.jpg}
+    \caption[Bildbeschriftung für Abbildungsverzeichnis]{Bildbeschriftung unter der Abbildung\\ (Quelle: \url{https://imgflip.com/})}
+    \label{fig:nico}
+\end{wrapfigure}
+\blindtext[1]
+
+Die Abbildung \ref{fig:latex} zeigt \dots
+\begin{figure}[hb]
+    \begin{subfigure}{6cm}
+      \centering
+      \includegraphics[width=6.5cm]{abb/1zfte27tn3q21.jpg}
+      \caption{Caption text 1\\ (Quelle: \url{https://me.me/})}
+    \end{subfigure}
+    \begin{subfigure}{6cm}
+      \centering
+      \includegraphics[width=6.5cm]{abb/bucket.png}
+      \caption{Caption text 2\\ (Quelle: \url{https://www.mememaker.net/})}
+    \end{subfigure}
+    \caption[Memes sind toll]{Memes sind toll}
+    \label{fig:latex}
+\end{figure}
